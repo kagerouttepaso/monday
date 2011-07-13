@@ -28,11 +28,11 @@ let s:numbers = ''
 
 function s:Add_word_pair(word1, word2)
   let w10 = tolower(a:word1)
-  let w11 = toupper(matchstr(a:word1, '.')) . matchstr(w10, '.*', 1) 
+  let w11 = toupper(matchstr(a:word1, '.')) . matchstr(w10, '.*', 1)
   let w12 = toupper(a:word2)
 
   let w20 = tolower(a:word2)
-  let w21 = toupper(matchstr(a:word2, '.')) . matchstr(w20, '.*', 1) 
+  let w21 = toupper(matchstr(a:word2, '.')) . matchstr(w20, '.*', 1)
   let w22 = toupper(a:word2)
 
   let s:words = s:words . w10 . ':' . w20 . ','
@@ -83,6 +83,23 @@ call <SID>Add_number_suffix( '6', 'th')
 call <SID>Add_number_suffix( '7', 'th')
 call <SID>Add_number_suffix( '8', 'th')
 call <SID>Add_number_suffix( '9', 'th')
+
+" add custom AddPair pattern
+" 2004/10/14
+call <SID>Add_word_pair('true', 'false')
+call <SID>Add_word_pair('false', 'true')
+call <SID>Add_word_pair('yes', 'no')
+call <SID>Add_word_pair('no', 'yes')
+call <SID>Add_word_pair('on', 'off')
+call <SID>Add_word_pair('off', 'on')
+
+call <SID>Add_word_pair('enable', 'disable')
+call <SID>Add_word_pair('disable', 'enable')
+
+call <SID>Add_word_pair("public", "protected")
+call <SID>Add_word_pair("protected", "private")
+call <SID>Add_word_pair("private", "public")
+
 
 function s:Find_nr_suffix(w, nr)
   let n1 = matchstr(a:nr, '\d\>')
