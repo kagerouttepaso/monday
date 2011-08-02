@@ -101,6 +101,14 @@ call <SID>Add_word_pair("protected", "private")
 call <SID>Add_word_pair("private", "public")
 
 
+" for git rebase -i
+call <SID>Add_word_pair("pick", "reword")
+call <SID>Add_word_pair("reword", "edit")
+call <SID>Add_word_pair("edit", "squash")
+call <SID>Add_word_pair("squash", "fixup")
+call <SID>Add_word_pair("fixup", "exec")
+call <SID>Add_word_pair("exec", "pick")
+
 function s:Find_nr_suffix(w, nr)
   let n1 = matchstr(a:nr, '\d\>')
   let n2 = matchstr(a:nr, '\d\d\>')
