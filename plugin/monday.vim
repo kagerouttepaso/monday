@@ -109,6 +109,11 @@ call <SID>Add_word_pair("squash", "fixup")
 call <SID>Add_word_pair("fixup", "exec")
 call <SID>Add_word_pair("exec", "pick")
 
+" for comment
+call <SID>Add_word_pair("add", "modify")
+call <SID>Add_word_pair("modify", "delete")
+call <SID>Add_word_pair("delete", "add")
+
 function s:Find_nr_suffix(w, nr)
   let n1 = matchstr(a:nr, '\d\>')
   let n2 = matchstr(a:nr, '\d\d\>')
